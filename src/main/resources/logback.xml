@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--
+     | Variables can be optained from system env
+     | https://logback.qos.ch/manual/configuration.html#scopes
+     -->
+
+    <!-- See https://logback.qos.ch/manual/layouts.html#formatModifiers -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %highlight(| %-5level |) %-20.20thread | %36logger{36} - %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="io.netty.handler.ssl.SslHandler" level="INFO"/>
+    <logger name="io.netty.util.internal" level="INFO"/>
+    <logger name="ratpack.util" level="INFO"/>
+
+</configuration>

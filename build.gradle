@@ -1,0 +1,28 @@
+plugins {
+  // Apply the groovy plugin to add support for Groovy
+  id 'groovy'
+
+  // Apply the application plugin to add support for building a CLI application.
+//  id 'application'
+  id "io.ratpack.ratpack-java" version "1.8.0"
+
+}
+
+repositories {
+  // Use jcenter for resolving dependencies.
+  // You can declare any Maven/Ivy/file repository here.
+  jcenter()
+}
+
+dependencies {
+  implementation 'org.codehaus.groovy:groovy-all:3.0.4'
+  implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+  // Use the awesome Spock testing and specification framework
+  testImplementation 'org.spockframework:spock-core:2.0-M2-groovy-3.0'
+}
+
+application {
+  // Define the main class for the application.
+  mainClassName = 'vanguard.quotes.App'
+}
